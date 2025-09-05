@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetMaster GH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    /* HEADER with background PNG */
+    .header {
+      background: url("header-bg.png") no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      padding: 50px 20px;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+
+    /* NAVBAR (mobile style tabs) */
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      background: #333;
+    }
+
+    .navbar button {
+      flex: 1;
+      padding: 14px 0;
+      color: white;
+      background: none;
+      border: none;
+      font-size: 15px;
+    }
+
+    .navbar button.active {
+      background: #444;
+      font-weight: bold;
+    }
+
+    /* PAGE SECTIONS */
+    .section {
+      display: none;
+      padding: 20px;
+    }
+
+    .active-section {
+      display: block;
+    }
+
+    /* CARD style */
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 90%;
+      margin: 25px auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+.btn {
+  display: inline-block;   /* wrap content */
+  padding: 12px 18px;
+  margin-top: 15px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;   /* centers the button */
+  max-width: 90%;
+  margin: 25px auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+    .btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>BetMaster GH</h1>
+    <p>Winning Starts Here!</p>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <button onclick="showSection('free', this)" class="active">Free Tips</button>
+    <button onclick="showSection('vip', this)">VIP</button>
+    <button onclick="showSection('history', this)">History</button>
+  </div>
+
+  <!-- FREE TIPS -->
+  <div id="free" class="section active-section">
+    <div class="card">
+      <h2>Free Tips</h2>
+      <p>Your daily free betting tips will appear here.</p>
+    </div>
+  </div>
+
+  <!-- VIP -->
+  <div id="vip" class="section">
+    <div class="card">
+      <h2>VIP Membership</h2>
+      <p>Unlock premium betting slips by joining VIP.</p>
+      <!-- 👇 Replace # with your SELAR payment link -->
+      <a href="#" target="_blank" class="btn">Pay for Today's VIP slips</a>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div id="history" class="section">
+    <div class="card">
+      <h2>History</h2>
+      <p>Your past betting slips will show here.</p>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function showSection(id, btn) {
+      // hide all sections
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
+      // show clicked section
+      document.getElementById(id).classList.add('active-section');
+      // update navbar active button
+      document.querySelectorAll('.navbar button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+<!-- Floating Telegram Button -->
+<a href="https://t.me/YourChannelUsername" target="_blank" class="telegram-float">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" />
+</a>
+
+<style>
+.telegram-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0088cc;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.telegram-float img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+}
+.telegram-float:hover {
+  background-color: #006699;
+}
+</style>
+</body>
+</html>
